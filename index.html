@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda | Cari & Efraín</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="music-player">
+        <button id="playPauseBtn">🎵 Reproducir Canción</button>
+        <audio id="weddingSong" loop>
+            <source src="assets/cancion.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <section class="hero" style="background-image: url('assets/foto-principal.jpeg');">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Cari & Efraín</h1>
+            <p>¡Nos casamos!</p>
+            <span class="date">Viernes, 11 de Septiembre de 2026</span>
+        </div>
+    </section>
+
+    <section class="info" data-aos="fade-up">
+        <h2>Nuestra Unión</h2>
+        <p class="verse">"Lo que Dios unió, no lo separe el hombre." - Mateo 19:6</p>
+        <div class="details">
+            <div class="detail-item">
+                <h3>Ceremonia</h3>
+                <p>Iglesia Bautista Príncipe de Paz<br>17:00 hrs</p>
+                <a href="URL_MAPS" target="_blank" class="btn-map">Ver Ubicación</a>
+            </div>
+            <div class="detail-item">
+                <h3>Recepción</h3>
+                <p>Comida en el templo<br>20:00 hrs</p>
+                <a href="URL_MAPS" target="_blank" class="btn-map">Ver Ubicación</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 data-aos="fade-up">Nuestros Momentos</h2>
+        <div class="photo-grid">
+            <img src="assets/foto1.jpeg" alt="Nosotros" data-aos="zoom-in">
+            <img src="assets/foto2.jpeg" alt="Nosotros" data-aos="zoom-in">
+            <img src="assets/foto3.jpeg" alt="Nosotros" data-aos="zoom-in">
+        </div>
+    </section>
+
+    <footer>
+        <p>¡Te esperamos con mucha alegría!</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
