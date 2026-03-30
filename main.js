@@ -13,8 +13,8 @@ const playPauseBtn = document.getElementById('playPauseBtn'); // El botón flota
 // 3. Lógica del Botón de Entrada (El sobre)
 if (btnEntrar) {
     btnEntrar.addEventListener('click', () => {
-        // 1. Configurar el inicio de la canción (Saltar los 2 segundos de vacío)
-        audio.currentTime = 4.5; // Salta directamente al segundo 4.5
+        // 1. Configurar el inicio de la canción (Saltar los 5 segundos de vacío)
+        audio.currentTime = 5; // Salta directamente al segundo 5
         audio.volume = 0;      // Empezamos en silencio para el fade-in
 
         audio.play().then(() => {
