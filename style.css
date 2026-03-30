@@ -83,6 +83,11 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; }
     cursor: pointer;
 }
 
+.verde-olivo {
+    color: red;
+    font-weight: bold;
+}
+
 .pos-top { object-position: top; }
 .pos-center { object-position: center; }
 .pos-70 { object-position: center 20%; } /* 20% desde arriba *
