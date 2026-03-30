@@ -13,23 +13,33 @@ const playPauseBtn = document.getElementById('playPauseBtn'); // El botón flota
 // 3. Lógica del Botón de Entrada (El sobre)
 if (btnEntrar) {
     btnEntrar.addEventListener('click', () => {
-        console.log("Botón presionado, intentando reproducir audio...");
+        // 1. Configurar el inicio de la canción (Saltar los 2 segundos de vacío)
+        audio.currentTime = 4; // Salta directamente al segundo 2
+        audio.volume = 0;      // Empezamos en silencio para el fade-in
 
-        // Intentar reproducir el audio
         audio.play().then(() => {
-            console.log("Audio reproduciéndose con éxito.");
+            // 2. Efecto Fade-In (Subir el volumen gradualmente en 2 segundos)
+            let fadeInInterval = setInterval(() => {
+                // Incrementamos el volumen de 0.05 en 0.05
+                if (audio.volume < 0.95) {
+                    audio.volume += 0.05;
+                } else {
+                    audio.volume = 1;
+                    clearInterval(fadeInInterval); // Detener el intervalo cuando llegue al máximo
+                }
+            }, 100); // Se ejecuta cada 100ms (el fade dura aprox 2 segundos)
+
             if (playPauseBtn) playPauseBtn.innerHTML = "⏸ Pausar Música";
         }).catch(error => {
-            console.error("El navegador bloqueó el audio:", error);
+            console.error("Error al reproducir:", error);
         });
 
-        // Ocultar el overlay con una transición suave
+        // 3. Ocultar el sobre (overlay)
         overlay.style.opacity = '0';
         setTimeout(() => {
             overlay.style.display = 'none';
-        }, 1000); // Espera a que termine la transición de 1s para quitarlo del DOM
+        }, 1000);
 
-        // Refrescar AOS para que las animaciones de la página principal se activen
         AOS.refresh();
     });
 }
