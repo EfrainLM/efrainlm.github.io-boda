@@ -111,15 +111,49 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
     font-size: 3rem;
 }
 
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        /* Sombra base dorada (con opacidad 70%) */
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    /* Primer pulso (dum) */
+    15% {
+        transform: scale(1.1); /* Agranda un 10% */
+        /* La sombra se expande y se desvanece */
+        box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+    }
+    /* Retorno breve */
+    30% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+    }
+    /* Segundo pulso (dum - un poco más fuerte) */
+    45% {
+        transform: scale(1.15); /* Agranda un 15% */
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    }
+    /* Pausa larga entre latidos */
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
+}
+
+/* 2. Aplicar la animación al botón de entrada */
 #btn-entrar {
-    padding: 15px 30px;
-    background: #d4af37; /* El dorado que ya usas */
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
+    /* ... (Manten tus estilos actuales de padding, background, etc.) ... */
+    
+    /* Asegurarnos de que el botón sea un elemento 'block' o 'inline-block' 
+       para que la transformación de escala funcione bien */
+    display: inline-block;
+    
+    /* Aplicar la animación:
+       nombre: heartbeat
+       duración: 2 segundos (el ciclo completo del latido)
+       iteración: infinite (que no pare nunca)
+       timing: ease-in-out (suave al inicio y al final) */
+    animation: heartbeat 2s infinite ease-in-out;
 }
 
 .fade-out {
