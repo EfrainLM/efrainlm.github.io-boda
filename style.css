@@ -244,3 +244,39 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
 .overlay-content p {
     margin-bottom: 15px;
 }
+
+/* Estilo elegante para el versículo bíblico */
+.verse {
+    font-family: 'Great Vibes', cursive; /* Usamos la tipografía elegante que ya tienes */
+    font-size: 1.8rem !important; /* Hacemos el texto más grande y vistoso */
+    line-height: 1.5;
+    color: #556B2F; /* Verde olivo que combina con tu paleta */
+    max-width: 650px;
+    margin: 30px auto 40px auto;
+    padding: 20px 40px;
+    position: relative;
+    font-style: normal !important; /* Quitamos la cursiva plana por defecto */
+}
+
+/* Agregamos comillas decorativas sutiles a los lados */
+.verse::before {
+    content: "“";
+    font-size: 4rem;
+    color: #d4af37; /* Tono dorado */
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    opacity: 0.4;
+    font-family: serif;
+}
+
+.verse::after {
+    content: "”";
+    font-size: 4rem;
+    color: #d4af37;
+    position: absolute;
+    right: 10px;
+    bottom: -30px;
+    opacity: 0.4;
+    font-family: serif;
+}
