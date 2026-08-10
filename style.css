@@ -349,7 +349,7 @@ section.info .verse::after {
 /* --- Espacio y diseño elegante para el Footer --- */
 footer {
     text-align: center;
-    padding: 60px 20px 100px 20px; /* El último número (100px) es el espacio en blanco gigante hasta abajo */
+    padding: 40px 20px 180px 20px; /* El último número (100px) es el espacio en blanco gigante hasta abajo */
     background-color: #fdfbf7; /* O el color de fondo que tenga tu página */
     color: var(--text);
     font-family: 'Montserrat', sans-serif;
