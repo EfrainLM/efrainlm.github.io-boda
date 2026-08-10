@@ -319,49 +319,37 @@ section.info .verse::after {
     cursor: pointer;
 }
 
-/* Opcional: Un texto tenue arriba de la flecha ayuda a la intuición */
-.scroll-indicator::before {
-    content: 'Desliza';
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
-    color: white;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-/* --- Nueva Flecha Extendida y Elegante --- */
+/* --- Flecha Extendida apuntando hacia abajo --- */
 .scroll-arrow {
     position: relative;
-    width: 30px; /* Aumentamos el ancho total del contenedor */
-    height: 15px; /* Altura visible de la flecha */
+    width: 30px; /* Ancho extendido */
+    height: 15px; /* Altura de la flecha */
 }
 
-/* Definimos las dos líneas que forman la V */
+/* Líneas que forman la V hacia abajo */
 .scroll-arrow::before,
 .scroll-arrow::after {
     content: '';
     position: absolute;
-    top: 0;
-    width: 52%; /* Un poco más de la mitad para que se crucen en el medio */
-    height: 2px; /* Grosor de la línea (más fina se ve más elegante) */
+    bottom: 0; /* Ancladas abajo para que la V apunte hacia el suelo */
+    width: 52%;
+    height: 2px; /* Grosor fino y elegante */
     background-color: white;
     border-radius: 2px;
-    transition: background-color 0.3s ease;
 }
 
-/* Línea izquierda */
+/* Línea izquierda (ahora con ángulo positivo para apuntar hacia abajo) */
 .scroll-arrow::before {
     left: 0;
-    transform-origin: right center;
-    transform: rotate(-45deg); /* Ángulo abierto hacia la izquierda */
+    transform-origin: left bottom;
+    transform: rotate(45deg); 
 }
 
-/* Línea derecha */
+/* Línea derecha (ahora con ángulo negativo) */
 .scroll-arrow::after {
     right: 0;
-    transform-origin: left center;
-    transform: rotate(45deg); /* Ángulo abierto hacia la derecha */
+    transform-origin: right bottom;
+    transform: rotate(-45deg); 
 }
 
 /* Efecto hover sutil (si el usuario pasa el mouse por encima) */
