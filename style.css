@@ -151,27 +151,25 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
 }
 
 //TIMER
-.countdown-section {
-    padding: 40px 20px;
-    background-color: #fff;
-}
-
+/* Forzar contenedor principal en línea */
 .countdown-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; /* Espacio horizontal entre cada cajita */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
     margin-top: 20px;
-    flex-wrap: wrap; /* Asegura que se adapte si la pantalla es muy pequeña */
 }
 
-.countdown-grid div {
-    background: var(--bg, #fffcf9);
-    border: 1px solid #e0d0b0; /* Un borde sutil que combine con tu tono dorado */
+/* Forzar que cada cajita no ocupe todo el ancho */
+.countdown-grid .time-box {
+    display: inline-block !important;
+    background: #fff;
+    border: 1px solid #e0d0b0;
     padding: 12px 18px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    min-width: 70px;
+    min-width: 65px;
     text-align: center;
 }
 
