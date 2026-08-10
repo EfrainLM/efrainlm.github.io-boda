@@ -306,7 +306,7 @@ section.info .verse::after {
 
 /* --- Indicador de Auto Scroll --- */
 .scroll-indicator {
-    margin-top: 1400px; /* Ajusta este valor negativo para subir más o menos los nombres. Prueba con -150px si -120px no es suficiente. */
+    margin-top: 140px; /* Ajusta este valor negativo para subir más o menos los nombres. Prueba con -150px si -120px no es suficiente. */
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
@@ -328,7 +328,7 @@ section.info .verse::after {
 
 /* Dibujamos una flecha elegante hacia abajo con CSS */
 .scroll-arrow {
-    width: 10px;
+    width: 100px;
     height: 10px;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
