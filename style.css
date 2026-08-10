@@ -304,13 +304,14 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
-/* --- Indicador de Scroll integrado al flujo --- */
+/* --- Indicador de Scroll Centrado y Unido --- */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
-    margin-top: 25px; /* Controla qué tan separado está del contador */
+    justify-content: center;
+    width: 100%; /* Ocupa todo el ancho para obligar a centrar el contenido */
+    margin-top: 25px;
     opacity: 0.9;
     animation: bounce 2s infinite;
     cursor: pointer;
@@ -324,39 +325,22 @@ section.info .verse::after {
     letter-spacing: 2px;
     text-transform: uppercase;
     opacity: 0.8;
+    margin-bottom: 5px;
 }
 
-/* Flecha ancha hacia abajo */
+/* Flecha clásica unida y centrada */
 .scroll-arrow {
-    position: relative;
-    width: 30px;
-    height: 12px;
+    width: 18px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    /* Esto garantiza que no se desplace hacia la derecha */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.scroll-arrow::before,
-.scroll-arrow::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 52%;
-    height: 2px;
-    background-color: white;
-    border-radius: 2px;
-}
-
-.scroll-arrow::before {
-    left: 0;
-    transform-origin: left bottom;
-    transform: rotate(45deg); 
-}
-
-.scroll-arrow::after {
-    right: 0;
-    transform-origin: right bottom;
-    transform: rotate(-45deg); 
-}
-
-/* Animación de rebote ajustada para el nuevo espacio */
+/* Animación de rebote */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-6px); }
