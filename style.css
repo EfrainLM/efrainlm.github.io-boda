@@ -304,46 +304,75 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
-/* --- Indicador de Auto Scroll --- */
 .scroll-indicator {
-    margin-top: 140px; /* Ajusta este valor negativo para subir más o menos los nombres. Prueba con -150px si -120px no es suficiente. */
+    position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    opacity: 0.8;
+    gap: 10px;
+    opacity: 0.9;
+    z-index: 10;
     animation: bounce 2s infinite;
+    cursor: pointer;
 }
 
-.scroll-text {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #ffffff;
+/* Opcional: Un texto tenue arriba de la flecha ayuda a la intuición */
+.scroll-indicator::before {
+    content: 'Desliza';
     font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
-/* Dibujamos una flecha elegante hacia abajo con CSS */
+/* --- Nueva Flecha Extendida y Elegante --- */
 .scroll-arrow {
-    width: 100px;
-    height: 10px;
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transform: rotate(45deg);
+    position: relative;
+    width: 30px; /* Aumentamos el ancho total del contenedor */
+    height: 15px; /* Altura visible de la flecha */
 }
 
-/* Animación de rebote sutil */
+/* Definimos las dos líneas que forman la V */
+.scroll-arrow::before,
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 52%; /* Un poco más de la mitad para que se crucen en el medio */
+    height: 2px; /* Grosor de la línea (más fina se ve más elegante) */
+    background-color: white;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Línea izquierda */
+.scroll-arrow::before {
+    left: 0;
+    transform-origin: right center;
+    transform: rotate(-45deg); /* Ángulo abierto hacia la izquierda */
+}
+
+/* Línea derecha */
+.scroll-arrow::after {
+    right: 0;
+    transform-origin: left center;
+    transform: rotate(45deg); /* Ángulo abierto hacia la derecha */
+}
+
+/* Efecto hover sutil (si el usuario pasa el mouse por encima) */
+.scroll-indicator:hover .scroll-arrow::before,
+.scroll-indicator:hover .scroll-arrow::after {
+    background-color: #f0e6d2; /* Un tono dorado suave al pasar el mouse */
+}
+
+/* La animación de rebote se mantiene igual */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translate(-50%, 0);
-    }
-    40% {
-        transform: translate(-50%, -8px);
-    }
-    60% {
-        transform: translate(-50%, -4px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+    40% { transform: translate(-50%, -10px); }
+    60% { transform: translate(-50%, -5px); }
 }
