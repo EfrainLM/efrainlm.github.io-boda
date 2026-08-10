@@ -304,13 +304,13 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
-/* --- Indicador de Scroll Centrado y Unido --- */
+/* --- Indicador de Scroll con SVG --- */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; /* Ocupa todo el ancho para obligar a centrar el contenido */
+    width: 100%;
     margin-top: 25px;
     opacity: 0.9;
     animation: bounce 2s infinite;
@@ -318,6 +318,7 @@ section.info .verse::after {
 }
 
 .scroll-indicator::before {
+    content: 'Desliza';
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
     color: white;
@@ -327,16 +328,12 @@ section.info .verse::after {
     margin-bottom: 5px;
 }
 
-/* Flecha clásica unida y centrada */
+/* Aquí manejas el ancho de la flecha a tu gusto */
 .scroll-arrow {
-    width: 18px;
-    height: 10px;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(45deg);
-    /* Esto garantiza que no se desplace hacia la derecha */
-    margin-left: auto;
-    margin-right: auto;
+    width: 35px; /* ¡Más ancha y extendida sin cortarse! */
+    height: 18px;
+    display: block;
+    margin: 0 auto;
 }
 
 /* Animación de rebote */
