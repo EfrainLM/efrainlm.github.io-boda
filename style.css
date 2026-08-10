@@ -345,3 +345,14 @@ section.info .verse::after {
     40% { transform: translateY(-7px); } /* Un poco más de rebote para compensar lo ancho */
     60% { transform: translateY(-3px); }
 }
+
+/* --- Espacio y diseño elegante para el Footer --- */
+footer {
+    text-align: center;
+    padding: 60px 20px 100px 20px; /* El último número (100px) es el espacio en blanco gigante hasta abajo */
+    background-color: #fdfbf7; /* O el color de fondo que tenga tu página */
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
