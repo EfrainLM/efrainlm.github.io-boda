@@ -306,7 +306,7 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
-/* --- Indicador de Scroll con SVG --- */
+/* --- Indicador de Scroll SVG Modificado --- */
 .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -321,25 +321,27 @@ section.info .verse::after {
 
 .scroll-indicator::before {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: white;
-    letter-spacing: 2px;
+    letter-spacing: 3px; /* Un poco más espaciado para mayor elegancia */
     text-transform: uppercase;
     opacity: 0.8;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-/* Aquí manejas el ancho de la flecha a tu gusto */
+/* --- Flecha Ancha y Extendida --- */
 .scroll-arrow {
-    width: 100px; /* ¡Más ancha y extendida sin cortarse! */
-    height: 18px;
+    width: 60px; /* ¡Este es el secreto! Aumentamos el ancho aquí */
+    height: 25px; /* Mantenemos una altura pequeña para que no sea alta */
     display: block;
     margin: 0 auto;
+    /* Opcional: un ligero resplandor para que resalte sobre la foto */
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
 }
 
 /* Animación de rebote */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-6px); }
+    40% { transform: translateY(-7px); } /* Un poco más de rebote para compensar lo ancho */
     60% { transform: translateY(-3px); }
 }
