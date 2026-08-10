@@ -49,10 +49,10 @@ if (playPauseBtn) {
     playPauseBtn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
-            playPauseBtn.innerHTML = "⏸ Pausar Música";
+            playPauseBtn.innerHTML = "⏸";
         } else {
             audio.pause();
-            playPauseBtn.innerHTML = "🎵 Reproducir Canción";
+            playPauseBtn.innerHTML = "🎵";
         }
     });
 }
