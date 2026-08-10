@@ -318,7 +318,6 @@ section.info .verse::after {
 }
 
 .scroll-indicator::before {
-    content: 'Desliza';
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
     color: white;
