@@ -306,6 +306,7 @@ section.info .verse::after {
 
 /* --- Indicador de Auto Scroll --- */
 .scroll-indicator {
+    margin-top: 120px; /* Ajusta este valor negativo para subir más o menos los nombres. Prueba con -150px si -120px no es suficiente. */
     position: absolute;
     bottom: 30px;
     left: 50%;
