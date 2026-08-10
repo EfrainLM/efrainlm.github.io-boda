@@ -56,3 +56,29 @@ if (playPauseBtn) {
         }
     });
 }
+
+const weddingDate = new Date("September 11, 2026 17:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const gap = weddingDate - now;
+
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const textDays = Math.floor(gap / day);
+    const textHours = Math.floor((gap % day) / hour);
+    const textMinutes = Math.floor((gap % hour) / minute);
+    const textSeconds = Math.floor((gap % minute) / second);
+
+    if (document.getElementById("days")) {
+        document.getElementById("days").innerText = textDays < 10 ? "0" + textDays : textDays;
+        document.getElementById("hours").innerText = textHours < 10 ? "0" + textHours : textHours;
+        document.getElementById("minutes").innerText = textMinutes < 10 ? "0" + textMinutes : textMinutes;
+        document.getElementById("seconds").innerText = textSeconds < 10 ? "0" + textSeconds : textSeconds;
+    }
+}
+
+setInterval(updateCountdown, 1000);
