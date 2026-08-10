@@ -304,63 +304,61 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
+/* --- Indicador de Scroll integrado al flujo --- */
 .scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    margin-top: 25px; /* Controla qué tan separado está del contador */
     opacity: 0.9;
-    z-index: 10;
     animation: bounce 2s infinite;
     cursor: pointer;
 }
 
-/* --- Flecha Extendida apuntando hacia abajo --- */
-.scroll-arrow {
-    position: relative;
-    width: 30px; /* Ancho extendido */
-    height: 15px; /* Altura de la flecha */
+.scroll-indicator::before {
+    content: 'Desliza';
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
-/* Líneas que forman la V hacia abajo */
+/* Flecha ancha hacia abajo */
+.scroll-arrow {
+    position: relative;
+    width: 30px;
+    height: 12px;
+}
+
 .scroll-arrow::before,
 .scroll-arrow::after {
     content: '';
     position: absolute;
-    bottom: 0; /* Ancladas abajo para que la V apunte hacia el suelo */
+    bottom: 0;
     width: 52%;
-    height: 2px; /* Grosor fino y elegante */
+    height: 2px;
     background-color: white;
     border-radius: 2px;
 }
 
-/* Línea izquierda (ahora con ángulo positivo para apuntar hacia abajo) */
 .scroll-arrow::before {
     left: 0;
     transform-origin: left bottom;
     transform: rotate(45deg); 
 }
 
-/* Línea derecha (ahora con ángulo negativo) */
 .scroll-arrow::after {
     right: 0;
     transform-origin: right bottom;
     transform: rotate(-45deg); 
 }
 
-/* Efecto hover sutil (si el usuario pasa el mouse por encima) */
-.scroll-indicator:hover .scroll-arrow::before,
-.scroll-indicator:hover .scroll-arrow::after {
-    background-color: #f0e6d2; /* Un tono dorado suave al pasar el mouse */
-}
-
-/* La animación de rebote se mantiene igual */
+/* Animación de rebote ajustada para el nuevo espacio */
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-    40% { transform: translate(-50%, -10px); }
-    60% { transform: translate(-50%, -5px); }
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-6px); }
+    60% { transform: translateY(-3px); }
 }
