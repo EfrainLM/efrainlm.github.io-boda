@@ -318,7 +318,6 @@ section.info .verse::after {
 }
 
 .scroll-indicator::before {
-    content: 'Desliza';
     font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
     color: white;
@@ -330,7 +329,7 @@ section.info .verse::after {
 
 /* Aquí manejas el ancho de la flecha a tu gusto */
 .scroll-arrow {
-    width: 35px; /* ¡Más ancha y extendida sin cortarse! */
+    width: 100px; /* ¡Más ancha y extendida sin cortarse! */
     height: 18px;
     display: block;
     margin: 0 auto;
