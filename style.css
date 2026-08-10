@@ -304,3 +304,46 @@ section.info .verse::after {
     vertical-align: middle; /* Alinea la cruz con la mitad del texto */
 }
 
+/* --- Indicador de Auto Scroll --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+}
+
+.scroll-text {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Dibujamos una flecha elegante hacia abajo con CSS */
+.scroll-arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(45deg);
+}
+
+/* Animación de rebote sutil */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, -8px);
+    }
+    60% {
+        transform: translate(-50%, -4px);
+    }
+}
