@@ -157,32 +157,31 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 15px !important;
-    margin-top: 20px;
+    gap: 10px !important;
+    margin: 20px 0;
 }
 
 /* Forzar que cada cajita no ocupe todo el ancho */
 .countdown-grid .time-box {
     display: inline-block !important;
     background: #fff;
-    border: 1px solid #e0d0b0;
-    padding: 12px 18px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    min-width: 65px;
+    border: 1px solid #d4af37;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    min-width: 55px;
     text-align: center;
 }
-
 .countdown-grid span {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--primary);
     display: block;
 }
 
 .countdown-grid p {
-    margin: 5px 0 0 0;
-    font-size: 0.75rem;
+    margin: 2px 0 0 0;
+    font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text);
@@ -201,16 +200,23 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
     font-size: 1.1rem;
 }
 
+/* Acercar las columnas de los padres */
 .parents-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 15px; /* Reducimos el espacio para que queden más juntas, como los detalles */
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .parents-group {
     flex: 1;
-    min-width: 250px;
+    min-width: 260px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f0e6d2; /* Un detalle sutil estilo boda */
 }
 
 .parents-group h3 {
@@ -227,4 +233,14 @@ h2 { font-family: 'Great Vibes', cursive; font-size: 3rem; margin-top: 20px; col
     margin: 5px 0;
     color: var(--text);
     font-size: 0.95rem;
+}
+
+/* Ajustes para el contador dentro del Overlay */
+.overlay-content {
+    max-width: 90%;
+    padding: 20px;
+}
+
+.overlay-content p {
+    margin-bottom: 15px;
 }
