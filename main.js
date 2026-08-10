@@ -94,3 +94,16 @@ function updateCountdown() {
 // Ejecutar inmediatamente y luego cada segundo
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Auto-scroll al hacer clic en el indicador
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
+    // Cambiar el cursor para que parezca botón
+    scrollIndicator.style.cursor = 'pointer';
+}
