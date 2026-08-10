@@ -329,7 +329,7 @@ section.info .verse::after {
 
 /* Aquí manejas el ancho de la flecha a tu gusto */
 .scroll-arrow {
-    width: 100px; /* ¡Más ancha y extendida sin cortarse! */
+    width: 1000px; /* ¡Más ancha y extendida sin cortarse! */
     height: 18px;
     display: block;
     margin: 0 auto;
