@@ -57,6 +57,7 @@ if (playPauseBtn) {
     });
 }
 
+// Cuenta Regresiva
 const weddingDate = new Date("September 11, 2026 17:00:00").getTime();
 
 function updateCountdown() {
@@ -67,6 +68,15 @@ function updateCountdown() {
     const minute = second * 60;
     const hour = minute * 60;
     const day = hour * 24;
+
+    // Si la fecha ya pasó, detenemos los números en 0
+    if (gap < 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+        return;
+    }
 
     const textDays = Math.floor(gap / day);
     const textHours = Math.floor((gap % day) / hour);
@@ -81,4 +91,6 @@ function updateCountdown() {
     }
 }
 
+// Ejecutar inmediatamente y luego cada segundo
+updateCountdown();
 setInterval(updateCountdown, 1000);
