@@ -29,7 +29,7 @@ if (btnEntrar) {
                 }
             }, 100); // Se ejecuta cada 100ms (el fade dura aprox 2 segundos)
 
-            if (playPauseBtn) playPauseBtn.innerHTML = "⏸ Pausar Música";
+            if (playPauseBtn) playPauseBtn.innerHTML = "⏸";
         }).catch(error => {
             console.error("Error al reproducir:", error);
         });
