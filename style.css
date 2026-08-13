@@ -356,3 +356,35 @@ footer {
     font-size: 1.1rem;
     letter-spacing: 1px;
 }
+
+/*DISEÑO PARA MAPS*/
+.location-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.map-container {
+    margin: 20px auto;
+    max-width: 600px; /* Tamaño máximo para escritorio */
+    border-radius: 10px;
+    overflow: hidden; /* Esto hace que el mapa tenga esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #d4af37;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #b8962d;
+}
